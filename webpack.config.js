@@ -3,7 +3,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    context: path.join(__dirname, 'site'),
     entry: './react/client.js',
 
     output: {

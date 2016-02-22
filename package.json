@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "webpack": "webpack --progress --colors"
   },
   "dependencies": {
     "babel-loader": "^6.2.3",
