@@ -1,4 +1,3 @@
 node_modules
 .idea
-site/public/app.js
-site/public/style.css
+site/public/*

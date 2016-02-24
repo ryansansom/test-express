@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node index",
-    "webpack": "webpack --progress --colors"
+    "clean": "rm -rf site/public/app.js & rm -rf site/public/style.css",
+    "build": "webpack --progress --colors",
+    "clean-build": "npm run clean && npm run build",
+    "fullstart": "npm run clean-build && npm run start"
   },
   "dependencies": {
     "babel-loader": "^6.2.3",

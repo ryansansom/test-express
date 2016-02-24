@@ -26,7 +26,8 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(true),
-        new webpack.optimize.UglifyJsPlugin({minimize: true}),
+        // Uglify on prod. Need to add.
+        // new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new webpack.DefinePlugin({
             'process.env': {
                 BROWSER: JSON.stringify(false)
