@@ -6,8 +6,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 
 import routes from './routes/index';
-import users from './routes/users';
-
+import serverRendered from './routes/server-rendered';
 import {notFound, devError, prodError} from './routes/error-handler';
 
 const app = express();
@@ -24,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/server', serverRendered);
 
 // catch 404 and forward to error handler
 app.use(notFound);
