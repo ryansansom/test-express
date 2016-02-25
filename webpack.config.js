@@ -3,10 +3,16 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './react/client.js',
-
+    //multiple entry - for future use
+    /*entry: {
+        appTest: './react/client.js',
+        newApp: './react/client2.js'
+    },*/
+    entry: {
+        main: './react/client.js'
+    },
     output: {
-        filename: 'app.js',
+        filename: '[name].js',
         path: path.join(__dirname, 'site/public')
     },
     module: {
@@ -33,7 +39,7 @@ module.exports = {
                 BROWSER: JSON.stringify(false)
             }
         }),
-        new ExtractTextPlugin('style.css', {
+        new ExtractTextPlugin('[name].css', {
             allChunks: true
         })
     ]
