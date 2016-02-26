@@ -4,16 +4,34 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import pug from 'pug';
+import fs from 'fs';
 
 import routes from './routes/index';
 import serverRendered from './routes/server-rendered';
 import {notFound, devError, prodError} from './routes/error-handler';
 
 const app = express();
+const layoutPath = path.join(__dirname, 'views/react-layout.jade');
+const layout = fs.readFileSync(layoutPath, 'utf8');
+const layoutFn = pug.compile(layout, {filename: layoutPath});
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'react'));
+app.set('view engine', 'js');
+app.engine('js', (view, locals, cb) => {
+  console.log('RS2016', __dirname, view, path.relative(path.join(__dirname, 'react'), view));
+  const page = require('./react/pages/MainPage');
+  console.log('RS2016', page, typeof page);
+  page.default()
+    .then(content => {
+        locals.content = content;
+        cb(null, layoutFn(locals));
+    })
+    .catch((err) => {
+      return cb(err);
+    });
+});
 
 app.use(favicon(path.join(__dirname, 'public/favicon', 'favicon.ico')));
 app.use(logger('dev'));
