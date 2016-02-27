@@ -14,11 +14,7 @@ find
     });
 
 module.exports = {
-    //multiple entry - for future use
     entry: entries,
-    /*entry: {
-        main: './react/pages/MainPage.js'
-    },*/
     output: {
         filename: '[name].js',
         path: path.join(__dirname, 'site/public')
