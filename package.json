@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node index",
+    "start": "npm run fullstart",
     "clean": "rm -rf site/public/*",
     "build": "webpack --progress --colors",
     "clean-build": "npm run clean && npm run build",
