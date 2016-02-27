@@ -17,12 +17,10 @@ const layout = fs.readFileSync(layoutPath, 'utf8');
 const layoutFn = pug.compile(layout, {filename: layoutPath});
 
 // view engine setup
-app.set('views', path.join(__dirname, 'react'));
+app.set('views', path.join(__dirname, 'react/pages'));
 app.set('view engine', 'js');
 app.engine('js', (view, locals, cb) => {
-  console.log('RS2016', __dirname, view, path.relative(path.join(__dirname, 'react'), view));
-  const page = require('./react/pages/MainPage');
-  console.log('RS2016', page, typeof page);
+  const page = require(view);
   page.default()
     .then(content => {
         locals.content = content;
@@ -41,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'site/public')));
 
 app.use('/', routes);
-app.use('/server', serverRendered);
+app.use('/test', serverRendered);
 
 // catch 404 and forward to error handler
 app.use(notFound);
