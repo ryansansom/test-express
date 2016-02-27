@@ -5,6 +5,7 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import pug from 'pug';
+import slash from 'slash';
 import fs from 'fs';
 
 import routes from './routes/index';
@@ -20,6 +21,7 @@ const layoutFn = pug.compile(layout, {filename: layoutPath});
 app.set('views', path.join(__dirname, 'react/pages'));
 app.set('view engine', 'js');
 app.engine('js', (view, locals, cb) => {
+  locals.bundle = slash(path.relative(__dirname, view)).replace(/^react\/pages\/([^\/]+).*$/, '$1');
   const page = require(view);
   page.default()
     .then(content => {
