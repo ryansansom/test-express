@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run fullstart",
+    "start": "node index",
+    "postinstall": "webpack --progress --colors",
     "clean": "rm -rf site/public/*",
     "build": "webpack --progress --colors",
     "clean-build": "npm run clean && npm run build",
-    "fullstart": "npm run clean-build && npm run start"
+    "fullstart": "npm run clean-build && node index"
   },
   "dependencies": {
     "babel-loader": "^6.2.3",
