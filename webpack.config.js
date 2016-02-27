@@ -44,14 +44,13 @@ module.exports = {
                 CLIENT_RENDER: true
             }
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            filename: 'common.js'
+        }),
         new webpack.optimize.OccurrenceOrderPlugin(true),
         // Uglify on prod. Need to add.
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new webpack.DefinePlugin({
-            'process.env': {
-                BROWSER: JSON.stringify(false)
-            }
-        }),
         new ExtractTextPlugin('[name].css', {
             allChunks: true
         })
