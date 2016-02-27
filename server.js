@@ -11,7 +11,7 @@ import http from 'http';
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 
 /**
@@ -28,6 +28,11 @@ const server = http.createServer(app);
 server.on('error', onError);
 server.on('listening', onListening);
 server.listen(port);
+
+process.on('SIGINT', function() {
+    console.log('\nShutting down process');
+    process.exit(0);
+});
 
 /**
  * Normalize a port into a number, string, or false.
