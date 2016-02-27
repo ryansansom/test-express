@@ -1,5 +1,5 @@
-import AppTest from './AppTest';
 import ReactDOM from 'react-dom';
-require('./small.less');
 
-ReactDOM.render(<AppTest />, document.getElementById("content"));
+export default function (Page) {
+    return ReactDOM.render(Page, document.getElementById("content"));
+}
