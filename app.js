@@ -9,13 +9,13 @@ import slash from 'slash';
 import fs from 'fs';
 
 import routes from './routes/index';
-import serverRendered from './routes/server-rendered';
+import testPages from './routes/test';
 import {notFound, devError, prodError} from './routes/error-handler';
 
 const app = express();
-const layoutPath = path.join(__dirname, 'views/react-layout.jade');
-const layout = fs.readFileSync(layoutPath, 'utf8');
-const layoutFn = pug.compile(layout, {filename: layoutPath});
+const layoutLoc = path.join(__dirname, 'views/react-layout.jade');
+const masterLayout = fs.readFileSync(layoutLoc, 'utf8');
+const layoutFunc = pug.compile(masterLayout, {filename: layoutLoc});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'react/pages'));
@@ -26,7 +26,7 @@ app.engine('js', (view, locals, cb) => {
   page.default()
     .then(content => {
         locals.content = content;
-        cb(null, layoutFn(locals));
+        cb(null, layoutFunc(locals));
     })
     .catch((err) => {
       return cb(err);
@@ -41,7 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'site/public')));
 
 app.use('/', routes);
-app.use('/test', serverRendered);
+app.use('/test', testPages);
 
 // catch 404 and forward to error handler
 app.use(notFound);

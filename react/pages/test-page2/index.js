@@ -14,6 +14,6 @@ export default function () {
 
 //client rendering
 if (process.env.CLIENT_RENDER) {
-    require('../../small.less');
+    require('./small.less');
     renderClient(TestPage2);
 }
