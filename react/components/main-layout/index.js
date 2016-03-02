@@ -5,10 +5,12 @@ if (process.env.CLIENT_RENDER) {
 }
 
 // Will become main layout
-export default class MainLayout extends React.component {
+export default class MainLayout extends React.Component {
  render() {
    return (
-     <div></div>
+     <div className='header'>
+       {this.props.children}
+     </div>
    );
  }
 }

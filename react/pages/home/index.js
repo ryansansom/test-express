@@ -1,4 +1,5 @@
 import React from "react";
+import MainLayout from '../../components/main-layout/index.js';
 import renderClient from '../../client.js';
 import render from '../../server.js';
 
@@ -6,9 +7,9 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <div className='header'>
-          {'Ample Storage'}
-        </div>
+        <MainLayout>
+          <div>{'Ample Storage'}</div>
+        </MainLayout>
       </div>
     );
   }
