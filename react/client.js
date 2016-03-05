@@ -4,6 +4,7 @@ import React from 'react';
 // Add standard css here
 if (process.env.CLIENT_RENDER) {
   require('./assets/styles/normalize.less');
+  require('./assets/styles/icons.less');
   require('./assets/styles/standard.less');
 }
 

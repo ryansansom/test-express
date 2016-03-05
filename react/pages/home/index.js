@@ -8,7 +8,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <MainLayout>
-          <div>{'Ample Storage'}</div>
+          <div>{'Rest of content...'}</div>
         </MainLayout>
       </div>
     );
