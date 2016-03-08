@@ -11,7 +11,11 @@ export default class MainLayout extends React.Component {
      <div>
        <div className='header'>
          <span className='icon-brand-logo' />
-         {'Ample Storage'}
+         <a
+           className='header--menu'
+           onClick={}>
+           {'Menu'}
+         </a>
        </div>
        {this.props.children}
      </div>
