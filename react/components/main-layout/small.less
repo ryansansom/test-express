@@ -24,8 +24,17 @@ body {
   display: none;
   height: 50px;
   width: 100%;
+  background-color: #e0e0e0;
 
   &.is-open {
     display: block;
   }
+}
+
+.menu--toggle:checked ~ .menu--container {
+  display: block;
+}
+
+.menu--toggle {
+  display: none;
 }

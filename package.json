@@ -35,5 +35,10 @@
     "serve-favicon": "~2.3.0",
     "slash": "^1.0.0",
     "webpack": "^1.12.13"
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "eslint": "^2.3.0",
+    "eslint-plugin-react": "^4.2.1"
   }
 }

@@ -21,12 +21,18 @@ export default class MainLayout extends React.Component {
       <div>
         <div className='header'>
           <span className='icon-brand-logo' />
-          <a
+          <label
             className='header--menu'
-            onClick={this.doSomethingOnClick}>
+            htmlFor='menu-open'>
             {'Menu'}
-          </a>
+          </label>
         </div>
+        <input
+          type='checkbox'
+          checked={this.state.menuOpen}
+          className='menu--toggle'
+          id='menu-open'
+          onChange={this.doSomethingOnClick} />
         <div className={classnames({
           'menu--container': true,
           'is-open': this.state.menuOpen
