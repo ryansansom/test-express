@@ -21,7 +21,11 @@ const layoutFunc = pug.compile(masterLayout, {filename: layoutLoc});
 app.set('views', path.join(__dirname, 'react/pages'));
 app.set('view engine', 'js');
 app.engine('js', (view, locals, cb) => {
-  locals.bundle = slash(path.relative(__dirname, view)).replace(/^react\/pages\/([^\/]+).*$/, '$1');
+  locals.props = Object.assign({}, locals._locals.props, locals.props);
+  delete locals.settings;
+  delete locals._locals;
+  delete locals.cache;
+  locals.bundleName = slash(path.relative(__dirname, view)).replace(/^react\/pages\/([^\/]+).*$/, '$1');
   const page = require(view);
   page.default()
     .then(content => {
