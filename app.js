@@ -27,7 +27,7 @@ app.engine('js', (view, locals, cb) => {
   delete locals.cache;
   locals.bundleName = slash(path.relative(__dirname, view)).replace(/^react\/pages\/([^\/]+).*$/, '$1');
   const page = require(view);
-  page.default()
+  page.default(locals.props)
     .then(content => {
         locals.content = content;
         cb(null, layoutFunc(locals));

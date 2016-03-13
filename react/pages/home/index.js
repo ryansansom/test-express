@@ -7,7 +7,8 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <MainLayout>
+        <MainLayout
+          url={this.props.url}>
           <div>{'Rest of content...'}</div>
         </MainLayout>
       </div>
@@ -15,8 +16,8 @@ class MainPage extends React.Component {
   }
 }
 
-export default function () {
-  return render(MainPage);
+export default function (props) {
+  return render(MainPage, props);
 }
 
 //client rendering

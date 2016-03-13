@@ -1,6 +1,10 @@
 body {
   background-color: #E6FFE6;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 .header {
   background-color: white;
@@ -20,12 +24,12 @@ body {
   padding: 21px;
 }
 
-@menu-height: 50px;
+@menu-height: 154px;
 
 .menu--container {
   height: 0;
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: #fff;
   overflow-y: hidden;
   -webkit-transition: height 0.5s ease-in-out;
   -moz-transition: height 0.5s ease-in-out;
@@ -34,11 +38,25 @@ body {
 
   &.is-open {
     height: @menu-height;
+    border-bottom: 1px solid grey;
   }
+
+  //Probably want this at a bigger width
+  /*li {
+    display: block;
+    float: left;
+    width: 100% * 4 / 24;
+  }*/
+  li {
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+}
 }
 
 .menu--toggle:checked ~ .menu--container {
   height: @menu-height;
+  border-bottom: 1px solid grey;
 }
 
 .menu--toggle {

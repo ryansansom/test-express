@@ -9,5 +9,14 @@ if (process.env.CLIENT_RENDER) {
 }
 
 export default function (Page) {
-  return ReactDOM.render(<Page />, document.getElementById("content"));
+  let propsJson = document.documentElement.getAttribute('page-props');
+   let props;
+   if (propsJson) {
+     try {
+       props = JSON.parse(propsJson);
+     } catch (e) {
+       console.error('There was an error trying to parse "page-props"'); //eslint-disable-line no-console
+     }
+   }
+  return ReactDOM.render(<Page {...props}/>, document.getElementById("content"));
 }
