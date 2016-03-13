@@ -17,7 +17,7 @@ module.exports = {
     entry: entries,
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, 'site/public')
+        path: path.join(__dirname, 'site/public/wp')
     },
     module: {
         preLoaders: [
@@ -25,7 +25,8 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: ['jsx-loader', 'babel-loader']
-            }
+            },
+          { test: /\.json$/, loader: 'json-loader' }
         ],
         loaders: [
             {

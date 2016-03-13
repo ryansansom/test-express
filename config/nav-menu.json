@@ -1,0 +1,28 @@
+{
+  "nav-menu": [
+    {
+      "title": "Home",
+      "href": "/"
+    },
+    {
+      "title": "Storge Solutions",
+      "href": "/storage-solutions"
+    },
+    {
+      "title": "Storage Services",
+      "href": "/storage-services"
+    },
+    {
+      "title": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "title": "Reviews",
+      "href": "/reviews"
+    },
+    {
+      "title": "Contact Us",
+      "href": "/contact"
+    }
+  ]
+}

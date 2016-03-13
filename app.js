@@ -9,7 +9,6 @@ import slash from 'slash';
 import fs from 'fs';
 
 import routes from './routes/index';
-import testPages from './routes/test';
 import {notFound, devError, prodError} from './routes/error-handler';
 
 const app = express();
@@ -27,7 +26,7 @@ app.engine('js', (view, locals, cb) => {
   delete locals.cache;
   locals.bundleName = slash(path.relative(__dirname, view)).replace(/^react\/pages\/([^\/]+).*$/, '$1');
   const page = require(view);
-  page.default()
+  page.default(locals.props)
     .then(content => {
         locals.content = content;
         cb(null, layoutFunc(locals));
@@ -45,7 +44,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'site/public')));
 
 app.use('/', routes);
-app.use('/test', testPages);
 
 // catch 404 and forward to error handler
 app.use(notFound);
