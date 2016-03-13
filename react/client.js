@@ -1,4 +1,3 @@
-import fastclick from 'fastclick';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
@@ -8,8 +7,6 @@ if (process.env.CLIENT_RENDER) {
   require('./assets/styles/icons.less');
   require('./assets/styles/standard.less');
 }
-
-fastclick.attach(document.body);
 
 export default function (Page) {
   return ReactDOM.render(<Page />, document.getElementById("content"));
