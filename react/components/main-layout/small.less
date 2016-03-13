@@ -20,19 +20,25 @@ body {
   padding: 21px;
 }
 
+@menu-height: 50px;
+
 .menu--container {
-  display: none;
-  height: 50px;
+  height: 0;
   width: 100%;
   background-color: #e0e0e0;
+  overflow-y: hidden;
+  -webkit-transition: height 0.5s ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 
   &.is-open {
-    display: block;
+    height: @menu-height;
   }
 }
 
 .menu--toggle:checked ~ .menu--container {
-  display: block;
+  height: @menu-height;
 }
 
 .menu--toggle {

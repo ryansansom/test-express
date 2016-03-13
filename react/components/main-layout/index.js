@@ -34,9 +34,9 @@ export default class MainLayout extends React.Component {
           id='menu-open'
           onChange={this.doSomethingOnClick} />
         <div className={classnames({
-          'menu--container': true,
-          'is-open': this.state.menuOpen
-        })}>
+            'menu--container': true,
+            'is-open': this.state.menuOpen
+          })}>
 
         </div>
         {this.props.children}
