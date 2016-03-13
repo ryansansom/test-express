@@ -17,7 +17,7 @@ module.exports = {
     entry: entries,
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, 'site/public')
+        path: path.join(__dirname, 'site/public/wp')
     },
     module: {
         preLoaders: [
