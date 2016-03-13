@@ -10,7 +10,7 @@ class GalleryPage extends React.Component {
         <MainLayout
           url={this.props.url}
           pageTitle='Gallery'>
-          <div>{'Rest of content...'}</div>
+          <div className='content-panel'>{'Rest of content...'}</div>
         </MainLayout>
       </div>
     );

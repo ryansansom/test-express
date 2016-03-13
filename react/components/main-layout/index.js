@@ -45,6 +45,10 @@ export default class MainLayout extends React.Component {
           })}>
           {this.makeMenu()}
         </ul>
+        <div className='contact-summary'>
+          <div className='contact-content'>sales@amplestorage.co.uk</div>
+          <div className='contact-content'>01702 531125</div>
+        </div>
         <h1 className='page-title'>
           {this.props.pageTitle}
         </h1>
