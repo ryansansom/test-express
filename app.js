@@ -9,7 +9,6 @@ import slash from 'slash';
 import fs from 'fs';
 
 import routes from './routes/index';
-import testPages from './routes/test';
 import {notFound, devError, prodError} from './routes/error-handler';
 
 const app = express();
@@ -45,7 +44,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'site/public')));
 
 app.use('/', routes);
-app.use('/test', testPages);
 
 // catch 404 and forward to error handler
 app.use(notFound);
