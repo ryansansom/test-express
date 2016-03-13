@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/storage-solutions', function(req, res) {
-  res.render('home/index', {
+  res.render('storage-solutions/index', {
     title: 'Storage Solutions',
     props: {
       url: req.originalUrl,
@@ -23,7 +23,7 @@ router.get('/storage-solutions', function(req, res) {
 });
 
 router.get('/storage-services', function(req, res) {
-  res.render('home/index', {
+  res.render('storage-services/index', {
     title: 'Storage Services',
     props: {
       url: req.originalUrl,
@@ -33,7 +33,7 @@ router.get('/storage-services', function(req, res) {
 });
 
 router.get('/gallery', function(req, res) {
-  res.render('home/index', {
+  res.render('gallery/index', {
     title: 'Gallery',
     props: {
       url: req.originalUrl,
@@ -43,7 +43,7 @@ router.get('/gallery', function(req, res) {
 });
 
 router.get('/reviews', function(req, res) {
-  res.render('home/index', {
+  res.render('reviews/index', {
     title: 'Reviews',
     props: {
       url: req.originalUrl,
@@ -53,7 +53,7 @@ router.get('/reviews', function(req, res) {
 });
 
 router.get('/contact', function(req, res) {
-  res.render('home/index', {
+  res.render('contact/index', {
     title: 'Contact Us',
     props: {
       url: req.originalUrl,

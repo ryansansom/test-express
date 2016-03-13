@@ -45,6 +45,9 @@ export default class MainLayout extends React.Component {
           })}>
           {this.makeMenu()}
         </ul>
+        <h1 className='page-title'>
+          {this.props.pageTitle}
+        </h1>
         {this.props.children}
       </div>
     );
