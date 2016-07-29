@@ -4,7 +4,7 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import pug from 'pug';
+import { compile } from 'pug';
 import slash from 'slash';
 import fs from 'fs';
 
@@ -14,7 +14,7 @@ import {notFound, devError, prodError} from './routes/error-handler';
 const app = express();
 const layoutLoc = path.join(__dirname, 'views/react-layout.jade');
 const masterLayout = fs.readFileSync(layoutLoc, 'utf8');
-const layoutFunc = pug.compile(masterLayout, {filename: layoutLoc});
+const layoutFunc = compile(masterLayout, {filename: layoutLoc});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'react/pages'));
