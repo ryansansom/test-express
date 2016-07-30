@@ -14,7 +14,7 @@ find
     });
 
 module.exports = {
-    entry: entries,
+    entry: './routes/client.js',
     output: {
         filename: '[name].js',
         path: path.join(__dirname, 'site/public/wp')

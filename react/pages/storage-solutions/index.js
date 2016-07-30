@@ -3,7 +3,7 @@ import MainLayout from '../../components/main-layout/index.js';
 import renderClient from '../../client.js';
 import render from '../../server.js';
 
-class StorageSolutions extends React.Component {
+export default class StorageSolutions extends React.Component {
   render() {
     return (
       <div>
@@ -17,12 +17,12 @@ class StorageSolutions extends React.Component {
   }
 }
 
-export default function (props) {
-  return render(StorageSolutions, props);
-}
+//export default function (props) {
+//  return render(StorageSolutions, props);
+//}
 
 //client rendering
-if (process.env.CLIENT_RENDER) {
-  require('./small.less');
-  renderClient(StorageSolutions);
-}
+//if (process.env.CLIENT_RENDER) {
+//  require('./small.less');
+//  renderClient(StorageSolutions);
+//}
