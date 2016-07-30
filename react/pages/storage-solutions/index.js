@@ -10,7 +10,7 @@ export default class StorageSolutions extends React.Component {
         <MainLayout
           url={this.props.url}
           pageTitle='Storage Services'>
-          <div>{'Rest of content...'}</div>
+          <div>{'Rest of content... REACT ROUTER'}</div>
         </MainLayout>
       </div>
     );
