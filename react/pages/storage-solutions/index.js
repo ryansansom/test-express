@@ -6,23 +6,11 @@ import render from '../../server.js';
 export default class StorageSolutions extends React.Component {
   render() {
     return (
-      <div>
-        <MainLayout
-          url={this.props.url}
-          pageTitle='Storage Services'>
-          <div>{'Rest of content... REACT ROUTER'}</div>
-        </MainLayout>
-      </div>
+      <MainLayout
+        url={this.props.url}
+        pageTitle='Storage Services'>
+        <div>{'Rest of content... REACT ROUTER'}</div>
+      </MainLayout>
     );
   }
 }
-
-//export default function (props) {
-//  return render(StorageSolutions, props);
-//}
-
-//client rendering
-//if (process.env.CLIENT_RENDER) {
-//  require('./small.less');
-//  renderClient(StorageSolutions);
-//}

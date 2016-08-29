@@ -6,23 +6,11 @@ import render from '../../server.js';
 export default class ReviewsPage extends React.Component {
   render() {
     return (
-      <div>
-        <MainLayout
-          url={this.props.url}
-          pageTitle='Reviews'>
-          <div>{'Rest of content...'}</div>
-        </MainLayout>
-      </div>
+      <MainLayout
+        url={this.props.url}
+        pageTitle='Reviews'>
+        <div>{'Rest of content...'}</div>
+      </MainLayout>
     );
   }
 }
-
-//export default function (props) {
-//  return render(ReviewsPage, props);
-//}
-
-//client rendering
-//if (process.env.CLIENT_RENDER) {
-//  require('./small.less');
-//  renderClient(ReviewsPage);
-//}

@@ -9,8 +9,8 @@ import StorageServices from '../react/pages/storage-services';
 import StorageSolutions from '../react/pages/storage-solutions';
 
 const routes = (
-  <Route component={App} path="/">
-    <IndexRoute component={Home}/>
+  <Route path="/">
+    <IndexRoute component={Home} url="/"/>
     <Route component={Contact} path="contact"/>
     <Route component={Gallery} path="gallery"/>
     <Route component={Reviews} path="reviews"/>

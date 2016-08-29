@@ -39,7 +39,7 @@ app.use((req, res) => {
       res.status(200).send(layoutFunc(templateLocals));
     } else {
       //Set page title from innermost title in page or default to dictionary
-      templateLocals.title = 'Essential UI | Page not found';
+      templateLocals.title = 'Test not found';
       res.status(404).send('Not found')
     }
   })

@@ -18,8 +18,8 @@ export default class MainLayout extends React.Component {
     return this.setState({menuOpen: !this.state.menuOpen});
   }
   makeMenu() {
-    return navConfig['nav-menu'].map(item => {
-      return this.props.url === item.href ? null : <li><Link to={item.href}>{item.title}</Link></li>;
+    return navConfig['nav-menu'].map((item, i) => {
+      return this.props.url === item.href ? null : <li key={i}><Link to={item.href}>{item.title}</Link></li>;
     });
   }
 
