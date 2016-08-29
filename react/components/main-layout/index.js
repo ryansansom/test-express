@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { Link } from 'react-router';
 import navConfig from '../../../config/nav-menu.json';
 
 if (process.env.CLIENT_RENDER) {
@@ -17,8 +18,8 @@ export default class MainLayout extends React.Component {
     return this.setState({menuOpen: !this.state.menuOpen});
   }
   makeMenu() {
-    return navConfig['nav-menu'].map(item => {
-      return this.props.url === item.href ? null : <li><a href={item.href}>{item.title}</a></li>;
+    return navConfig['nav-menu'].map((item, i) => {
+      return this.props.url === item.href ? null : <li key={i}><Link to={item.href}>{item.title}</Link></li>;
     });
   }
 
